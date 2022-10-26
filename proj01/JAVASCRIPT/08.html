@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 이벤트처리</title>
+  </head>
+  <body>
+    <button class="'btn" id="'btn">클릭!!</button>
+    <button>클릭!!</button>
+    <script>
+      // 1. 이벤트 리스닝.
+      // 2. 이벤트 처리( 반응 )
+
+      //소스.addEventListener(eventName, eventHandler, )
+      document.addEventListener("click", changColor, false);
+
+      function changColor() {
+        document.body.style.backgroundColor = "blue";
+      }
+
+      const btn = document.getElementsByTagName("button");
+      const btn1 = document.querySelector("button");
+      document.querySelector(".btn");
+      document.querySelector("#btn");
+      document.getElementById("btn");
+      console.log(btn);
+
+      btn[0].addEventListener("click", hello, false);
+
+      function hello() {
+        console.log("hello!!");
+      }
+    </script>
+  </body>
+</html>

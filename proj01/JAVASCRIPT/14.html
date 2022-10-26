@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form id="myform" action="13.html">
+      <label for="name">이름</label><br />
+      <input type="text" name="name" id="name" value="no name" /><br />
+      <label for="pass">비밀번호</label><br />
+      <input type="password" name="pass" id="pass" /><br />
+      <label for="pass-check">비밀번호 확인</label><br />
+      <input type="password" id="pass-check" /><br />
+      <input type="submit" value="제출" />
+    </form>
+    <script>
+      const myform = document.getElementById("myform");
+      myform.addEventListener("submit", checkValue, false);
+
+      function checkValue(e) {
+        const name = document.getElementById("name").value;
+        const pass = document.getElementById("pass").value;
+        const pass2 = document.getElementById("pass-check").value;
+        if (name != "" && pass != "" && pass === pass2) {
+          return true;
+        }
+        if (name == "") {
+          alert("이름을 입력해요");
+          document.getElementById("name").style.backgroundColor = "red";
+          document.getElementById("name").value = "이름은 반드시 입력해야해요.";
+
+          document.getElementById("name").focus();
+          e.preventDefault();
+          return false;
+        }
+        if (pass !== pass2) {
+          document.getElementById("pass").style.backgroundColor = "red";
+          alert("비밀번호는 동일하게 입력하세요.");
+
+          document.getElementById("pass").focus();
+          e.preventDefault();
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

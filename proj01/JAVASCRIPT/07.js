@@ -4,7 +4,7 @@ function work() {
     for (let i = 0; i < 1000000000; i++) {}
     const end = Date.now();
     console.log(end - start + "ms");
-  }, 0);
+  }, 1000);
 }
 
 console.log("작업 시작!");

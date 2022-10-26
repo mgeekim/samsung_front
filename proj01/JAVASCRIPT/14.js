@@ -14,6 +14,6 @@ function increaseAndPrint(n) {
   });
 }
 
-increaseAndPrint(0).then((n) => {
+increaseAndPrint(4).then((n) => {
   console.log("result: ", n);
 });

@@ -4,6 +4,7 @@ const myPromise = new Promise((resolve, reject) => {
   }, 1000);
 });
 
+console.log("before");
 myPromise
   .then((n) => {
     console.log(n);
@@ -11,3 +12,4 @@ myPromise
   .catch((error) => {
     console.log(error);
   });
+console.log("after");

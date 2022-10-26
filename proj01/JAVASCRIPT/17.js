@@ -8,4 +8,6 @@ async function process() {
   console.log("반갑습니다!");
 }
 
+console.log("before");
 process();
+console.log("after");
