@@ -31,12 +31,15 @@ let idGen = 3;
 
 router.post("/api/todos", function (req, res) {
   // post parameter
-  let title = req.query.title;
+  let title = req.body.title;
 
+  console.log("body::" + req.body);
+  // console.log(req.query);
+  let todoobj = { id: ++idGen, title: title, done: false };
   // 배열의 가장 앞에 값 추가
-  todos.unshift({ id: ++idGen, title: title, done: false });
+  todos.unshift(todoobj);
 
-  res.status(200).json(todos);
+  res.status(200).json(todoobj);
 });
 
 router.delete("/api/todos/:id", function (req, res) {
