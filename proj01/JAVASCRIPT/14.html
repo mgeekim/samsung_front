@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <form id="myform" action="13.html">
+    <form id="myform" action="13.html" method="post">
       <label for="name">이름</label><br />
       <input type="text" name="name" id="name" value="no name" /><br />
       <label for="pass">비밀번호</label><br />
@@ -35,7 +35,7 @@
 
           document.getElementById("name").focus();
           e.preventDefault();
-          return false;
+          return;
         }
         if (pass !== pass2) {
           document.getElementById("pass").style.backgroundColor = "red";
