@@ -28,7 +28,7 @@ function TitlePriceInputBox() {
       price: "",
     });
   }
-
+  console.log("랜더링");
   return (
     <div>
       <label> title : {title}</label>

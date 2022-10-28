@@ -64,5 +64,17 @@ router.patch("/api/todos/:id", function (req, res) {
 
   res.status(200).json(todos);
 });
+router.patch("/api/todos", function (req, res) {
+  const id = req.body.id;
+  const title = req.body.title;
+
+  todos.map((item) => {
+    if (item.id === id) {
+      item.title = title;
+    }
+  });
+
+  res.status(200).json({ result: "ok" });
+});
 
 module.exports = router;

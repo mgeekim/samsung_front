@@ -1,17 +1,24 @@
 // import Counter from "./Counter";
-import TitlePriceInputBox from "./TitlePriceInputBox";
-import Welcome from "./Welcome";
+// import UseEffectTest from "./component/UseEffectTest";
+// import TitlePriceInputBox from "./TitlePriceInputBox";
+// import Welcome from "./Welcome";
+
+import UseRefTest from "./component/UseRefTest";
 
 function App() {
   return (
-    <div className="card">
-      {/* Hello react!!! */}
-      <Welcome flag={true} />
+    <>
+      <div className="card">
+        {/* Hello react!!! */}
+        {/* <Welcome flag={true} /> */}
 
-      {/* <Counter /> */}
+        {/* <Counter /> */}
 
-      <TitlePriceInputBox />
-    </div>
+        {/* <TitlePriceInputBox /> */}
+        {/* <UseEffectTest /> */}
+        <UseRefTest />
+      </div>
+    </>
   );
 }
 
