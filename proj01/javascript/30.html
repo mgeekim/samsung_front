@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>event1</title>
+  </head>
+  <body>
+    <button>클릭!!</button>
+    <script>
+      //1. 이벤트 리스닝
+      //document.addEventListener("click", changeColor, false);
+      //source.addEventListener(이벤트이름, EventHandler, ToCapture(캡쳐링여부))
+
+      //   const btn = document.getElementsByTagName("button");
+      const btn = document.querySelectorAll("button");
+      console.log(btn[0]);
+      btn[0].addEventListener(
+        "click",
+        () => {
+          console.log("btn!!!");
+          document.body.style.backgroundColor = "red";
+        },
+        false
+      );
+
+      function btnChangeColor() {
+        console.log("btn!!!");
+        document.body.style.backgroundColor = "red";
+      }
+
+      document.addEventListener("click", changeColor, false);
+
+      function changeColor(e) {
+        console.log("document!!");
+        document.body.style.backgroundColor = "yellow";
+        document.removeEventListener("click", changeColor, false);
+      }
+    </script>
+  </body>
+</html>
