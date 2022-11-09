@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트-버블링,캡쳐링</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>오늘의 할일</h1>
+
+    <ul id="todo-list">
+      <li>
+        <input type="checkbox" id="todo1" />
+        <label for="todo1">이벤트 버블링 공부하기</label>
+      </li>
+
+      <li>
+        <input type="checkbox" id="todo2" />
+        <label>이벤트 캡쳐링 공부하기</label>
+      </li>
+      <li>
+        <input type="checkbox" id="todo3" />
+        <label for="todo3">소풍가기</label>
+      </li>
+      <li>
+        <input type="checkbox" id="todo4" />
+        <label for="todo4">맛있는거 먹으로 가기</label>
+      </li>
+    </ul>
+    <label for="todo">할일을 입력하세요.</label>
+    <input type="text" id="todo-value" />
+    <button id="todoBtn">할일입력</button>
+    <script>
+      const todoBtn = document.getElementById("todoBtn");
+      todoBtn.addEventListener("click", inputTodo, false);
+
+      function inputTodo() {
+        console.log("todoBtn click!!");
+        //<li>
+        //<input type="checkbox" id="todo4" />
+        //<label for="todo4">맛있는거 먹으로 가기</label>
+        //</li>
+        // 핧일을 하나 입력 받았다면, 위 처럼 li 엘리먼트가 추가되어야 함.
+        const li = document.createElement("li");
+        const input = document.createElement("input");
+        const label = document.createElement("label");
+
+        const todoValue = document.getElementById("todo-value").value;
+
+        // input 상자 초기화
+        document.getElementById("todo-value").value = "";
+
+        const labelText = document.createTextNode(todoValue);
+
+        //필요한 속성을 추가!!!
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("id", "todo5");
+        label.setAttribute("for", "todo5");
+
+        //엘리먼트들을 조립!!
+        label.appendChild(labelText);
+        li.appendChild(input);
+        li.appendChild(label);
+
+        const toodList = document.getElementById("todo-list");
+        toodList.appendChild(li);
+      }
+
+      const todoList = document.getElementById("todo-list");
+      todoList.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log(e.target.tagName);
+        if (e.target.tagName == "INPUT") {
+          console.log("todoList click!!!");
+        }
+      });
+
+      //   const inputs = document.querySelectorAll("input");
+      //   const inputs = document.querySelectorAll("ul#todo-list > li  input");
+      //   inputs.forEach(function (input) {
+      //     input.addEventListener("click", () => {
+      //       console.log("click!!!");
+      //     });
+      //   });
+    </script>
+  </body>
+</html>
