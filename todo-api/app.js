@@ -8,6 +8,25 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
+// cors 해결을 위해서!!!
+const cors = require("cors");
+
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:3002",
+  undefined,
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not Allowed Origin!"));
+    }
+  },
+};
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
