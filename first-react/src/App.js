@@ -9,11 +9,15 @@
 // import TitlePriceInputBox from "./TitlePriceInputBox";
 // import Welcome from "./Welcome";
 
-import UseEffectExam from "./component/UseEffectExam";
+import BoardList from "./BoardList";
+import UseRefExam from "./component/UseRefExam";
+import UseRefExam2 from "./component/UseRefExam2";
+
+// import UseEffectExam from "./component/UseEffectExam";
 
 function App() {
   return (
-    <div className="card">
+    <div>
       {/* <Welcome flag={true} /> */}
       {/*   <h1>hello~~~ react!!</h1>
       <p>리액트를 만나보아요~~</p> */}
@@ -32,7 +36,11 @@ function App() {
         <Hello />
       </Parent> */}
 
-      <UseEffectExam />
+      {/* <UseEffectExam /> */}
+      {/* <UseRefExam2 /> */}
+      {/* <UseRefExam /> */}
+
+      <BoardList />
     </div>
   );
 }
