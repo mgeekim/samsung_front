@@ -1,0 +1,19 @@
+section.main > ul {
+  width: 80%;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.portfolio > li {
+  margin-bottom: 10px;
+}
+
+section.main > ul > li:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+/* section.main > ul > li:last-child {
+  color: red;
+  top: 500px;
+  left: 50px;
+} */
