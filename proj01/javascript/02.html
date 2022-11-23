@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(i);
+      var i = 10;
+      var i = 20;
+      console.log(i);
+      let a = 20;
+      console.log(a);
+
+      //   let a = 30;  오류발생
+
+      a = 30;
+
+      console.log(a);
+
+      const test = 20;
+
+      //   test = 30;  안된다!!  const 상수를 선언하는 예약어 이므로!!
+
+      function func() {
+        if (true) {
+          let value = 50;
+        }
+        let b = 20;
+        console.log(value);
+      }
+
+      func();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function add4(a, b) {
+        return a + b;
+      }
+      const add = function (a, b) {
+        return a + b;
+      };
+
+      const add2 = (a, b) => {
+        return a + b;
+      };
+
+      const add3 = (a, b) => a + b;
+
+      console.log(add(10, 20));
+      console.log(add2(10, 20));
+      console.log(add3(10, 20));
+
+      //   const add = function (a, b) {
+      //     return a + b;
+      //   };
+
+      console.log(add);
+
+      function hello(name) {
+        console.log("hello, " + name + "!");
+        console.log(`hello, ${name}!`);
+        console.log(arguments.length);
+        console.log(arguments[0]);
+      }
+
+      hello("carami", 123, 333);
+      hello("carami", 123);
+      hello();
+
+      function test(a) {
+        return `hello, ${a}!`;
+      }
+    </script>
+  </body>
+</html>

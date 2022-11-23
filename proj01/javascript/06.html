@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = {
+        _a: 1,
+        _b: 2,
+        // sum: function () {
+        //   return this.a + this.b;
+        // },
+        get sum() {
+          return this.a + this.b;
+        },
+        get a() {
+          console.log("getter a() 함수 호출");
+          return this._a;
+        },
+        set a(value) {
+          this._a = value;
+        },
+      };
+
+      //   let s = numbers.sum();
+
+      //   console.log(s);
+
+      console.log(numbers.sum);
+      console.log(numbers.a);
+      numbers.a = 20;
+      console.log(numbers.a);
+    </script>
+  </body>
+</html>
