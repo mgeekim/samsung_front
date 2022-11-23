@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const todos = [
+let todos = [
   {
     id: 3,
     title: "Todo 3",
@@ -30,6 +30,31 @@ router.get("/api/todos/:id", function (req, res) {
   const id = req.params.id;
   console.log(id);
   const todo = todos.find((todo) => todo.id === parseInt(id));
+  res.status(200).json(todo);
+});
+
+router.delete("/api/todos/:id", function (req, res) {
+  const id = parseInt(req.params.id);
+  todos = todos.filter((todo) => todo.id !== id);
+  res.status(200).json(todos);
+});
+
+router.patch("/api/todos/:id", function (req, res) {
+  const id = parseInt(req.params.id);
+  const todo = todos.find((todo) => todo.id === id);
+  todo.done = !todo.done;
+
+  res.status(200).json(todos);
+});
+
+let idGen = 3;
+router.post("/api/todos", function (req, res) {
+  const title = req.body.title;
+
+  let todo = { id: ++idGen, title: title, done: false };
+
+  todos.unshift(todo);
+
   res.status(200).json(todo);
 });
 module.exports = router;
