@@ -1,14 +1,16 @@
-// import Counter from "./component/Counter";
-// import UseStateExam from "./component/UseStateExam";
-import UseStateExam2 from "./component/UseStateExam2";
+import ChildrenExam from "./component/ChildrenExam";
+import Counter from "./component/Counter";
+import Welcome from "./component/Welcome";
+// import UseStateExam3 from "./component/UseStateExam3";
 
 function App() {
   return (
     <div className="card">
+      <Welcome />
       hello~~
       {/* <Counter /> */}
-      {/* <UseStateExam /> */}
-      <UseStateExam2 />
+      {/* <UseStateExam3 /> */}
+      <ChildrenExam />
     </div>
   );
 }

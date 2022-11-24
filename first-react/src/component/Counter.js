@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Hello from "./Hello";
+import MyButton from "./MyButton";
 
 function Counter() {
   console.log("Counter 렌더링!! 👍");
@@ -19,9 +21,12 @@ function Counter() {
   }
   return (
     <div>
+      <Hello color="red" name="carami" />
+      <Hello color="yellow" />
       <h2>{count}</h2>
-      <input type="button" value="+" onClick={plusHandler} />
-      <input type="button" value="-" onClick={minusHandler} />
+      <MyButton title="+" clickHandler={plusHandler} />
+      <MyButton title="-" clickHandler={minusHandler} />
+      <MyButton clickHandler={plusHandler} />
     </div>
   );
 }
