@@ -24,10 +24,22 @@ const ToDoBox = () => {
   const deleteHandler = (id) => {
     setToDoList(toDoList.filter((toDo) => toDo.id !== id));
   };
+
+  const updateTodo = (toDo) => {
+    toDoList.map((item) => {
+      if (item.id === toDo.id) {
+        item.title = toDo.title;
+      }
+    });
+  };
   return (
     <div>
       <ToDoInput addToDoHandler={addToDoHandler} />
-      <ToDoList toDoList={toDoList} deleteHandler={deleteHandler} />
+      <ToDoList
+        toDoList={toDoList}
+        deleteHandler={deleteHandler}
+        updateTodo={updateTodo}
+      />
     </div>
   );
 };

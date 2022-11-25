@@ -13,7 +13,6 @@ function ToDoInput({ addToDoHandler }) {
       setToDo("");
     }
   };
-
   return (
     <input
       type="text"

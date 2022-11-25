@@ -1,10 +1,15 @@
-function ToDoList({ toDoList, deleteHandler }) {
+import ToDo from "./ToDo";
+
+function ToDoList({ toDoList, deleteHandler, updateTodo }) {
   return (
     <ul>
       {toDoList.map((toDo) => (
         <li key={toDo.id}>
-          {toDo.title}
-          <button onClick={() => deleteHandler(toDo.id)}>삭제</button>
+          <ToDo
+            toDo={toDo}
+            deleteHandler={deleteHandler}
+            updataToDo={updateTodo}
+          />
         </li>
       ))}
     </ul>
