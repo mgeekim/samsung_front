@@ -1,15 +1,22 @@
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 import ToDoInput from "./ToDoInput";
 import ToDoList from "./ToDoList";
 
 const ToDoBox = () => {
-  const [toDoList, setToDoList] = useState([
-    { id: 1, title: "리액트 공부하기" },
-    { id: 2, title: "물마시기" },
-    { id: 3, title: "봄봄이랑 놀아주기" },
-  ]);
+  const [toDoList, setToDoList] = useState([]);
 
+  useEffect(() => {
+    //서버에게 데이터를 요청 받아와서 setTodoList를 이용해서 todoList값을 채워준다.
+    async function getTodos() {
+      const result = await axios.get(`http://localhost:3030/api/todos`);
+      setToDoList(result.data);
+    }
+
+    getTodos();
+  }, []);
+
+  // console.log(toDoList);
   const nextId = useRef(4);
   const addToDoHandler = (toDo) => {
     // console.log(toDo);
