@@ -21,8 +21,8 @@ function Counter() {
   }
   return (
     <div>
-      <Hello color="red" name="carami" />
-      <Hello color="yellow" />
+      <Hello color="red" name="carami" isSpecial={true} />
+      <Hello color="blue" />
       <h2>{count}</h2>
       <MyButton title="+" clickHandler={plusHandler} />
       <MyButton title="-" clickHandler={minusHandler} />
