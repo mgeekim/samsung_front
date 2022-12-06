@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <script>
+      const dog = {
+        name: "봄",
+        age: 8,
+      };
+      console.log(typeof dog);
+
+      //   <사람>
+      //     <이름>강경미</이름>
+      //     <전화번호>010-111-2222</전화번호>
+      //     <주소>경기도 고양시</주소>
+      //   </사람>
+      //   {이름:강경미,전화번호:010-222-2222,주소:경기도고양시}
+
+      const ironMan = {
+        name: "토니 스타크",
+        actor: "로버트 다우니 주니어",
+        alias: "아이언맨",
+      };
+
+      const captainAmerica = {
+        name: "스티븐 로저스",
+        actor: "크리스 에반스",
+        alias: "캡틴 아메리카",
+      };
+
+      function print(hero) {
+        const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다.`;
+        console.log(text);
+      }
+
+      function print(hero) {
+        const { alias, name, actor } = hero;
+        const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+        console.log(text);
+      }
+
+      function print({ alias, name, actor }) {
+        const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+        console.log(text);
+      }
+
+      print(ironMan);
+      print(captainAmerica);
+    </script>
+  </body>
+</html>
