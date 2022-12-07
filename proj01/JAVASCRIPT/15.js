@@ -1,3 +1,7 @@
+const callFunc = () => {
+  console.log("작업이 끝났어요!");
+};
+
 function work(callback) {
   setTimeout(() => {
     const start = Date.now();
@@ -9,7 +13,6 @@ function work(callback) {
 }
 
 console.log("작업 시작!");
-work(() => {
-  console.log("작업이 끝났어요!");
-});
+work(callFunc);
+
 console.log("다음 작업");

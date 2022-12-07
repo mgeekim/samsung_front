@@ -10,6 +10,25 @@
     <h1>Button A - <span id="counter-a">0</span></h1>
     <h1>Button B - <span id="counter-b">0</span></h1>
 
-    <script></script>
+    <script>
+      let btnA = document.getElementById("button-a");
+      let btnB = document.querySelector("#button-b");
+      let counterA = document.getElementById("counter-a");
+      let counterB = document.getElementById("counter-b");
+
+      btnA.addEventListener("click", incrementFunc, false);
+      btnB.addEventListener("click", incrementFunc);
+
+      function incrementFunc(e) {
+        console.log("이벤트 발생!!");
+        console.log(e.target);
+        console.log(this);
+        if (this.id == "button-a") {
+          counterA.innerHTML = Number(counterA.innerHTML) + 1;
+        } else {
+          counterB.innerHTML = Number(counterB.innerHTML) + 1;
+        }
+      }
+    </script>
   </body>
 </html>
