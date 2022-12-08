@@ -52,7 +52,7 @@ router.post("/api/todos", function (req, res) {
   const newTodo = { id: ++idGen, title: title, done: false };
   todos.unshift(newTodo);
 
-  res.status(200).json(todos);
+  res.status(200).json(newTodo);
 });
 
 router.patch("/api/todos/:id", function (req, res) {
