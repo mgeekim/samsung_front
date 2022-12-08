@@ -1,4 +1,6 @@
+import ChildrenExam from "./compont/propsChildren/ChildrenExam";
 import Counter from "./Counter";
+import Hello from "./Hello";
 
 function App() {
   const name = "kang";
@@ -7,6 +9,11 @@ function App() {
     <div className="card">
       <h1>hello {name}!!! </h1>
       <Counter />
+
+      <Hello color="blue" name="carami" />
+      <Hello></Hello>
+
+      <ChildrenExam />
     </div>
   );
 }
