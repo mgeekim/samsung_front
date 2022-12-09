@@ -7,8 +7,9 @@ const ToDoInput = ({ addTodoHandler }) => {
     // console.log("value::" + e.target.value);
     if (e.key === "Enter") {
       //리스트에 저장!!
-
-      addTodoHandler();
+      if (todo === "") return;
+      addTodoHandler(todo);
+      setTodo("");
     }
   };
   const onChangeHandler = (e) => {
