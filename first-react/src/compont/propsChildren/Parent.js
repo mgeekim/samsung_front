@@ -3,7 +3,7 @@ const Parent = (p) => {
     border: "4px solid green",
     padding: "16px",
   };
-  return <div style={style}>{p.children.count}</div>;
+  return <div style={style}>{p.children}</div>;
 };
 
 export default Parent;
