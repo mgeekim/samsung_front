@@ -1,5 +1,6 @@
 import { useState } from "react";
 const ToDoInput = ({ addTodoHandler }) => {
+  console.log("todoinput");
   const [todo, setTodo] = useState("");
 
   const keyPressHandler = (e) => {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 const ToDo = ({ todo, deleteHandler, updateTodo }) => {
+  // console.log("todo");
   const [updateMode, setUpdateMode] = useState(false);
   const [title, setTitle] = useState(todo.title);
   const changHandler = (e) => {

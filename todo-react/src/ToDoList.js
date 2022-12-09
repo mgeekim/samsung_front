@@ -1,6 +1,8 @@
+import React from "react";
 import ToDo from "./ToDo";
 
 const ToDoList = ({ todoList, deleteHandler, updateTodo }) => {
+  console.log("todoList");
   return (
     <ul>
       {todoList.map((todo) => (

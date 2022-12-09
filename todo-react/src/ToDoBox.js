@@ -3,6 +3,7 @@ import ToDoList from "./ToDoList";
 import { useState, useRef } from "react";
 
 const ToDoBox = () => {
+  console.log("todobox");
   const [todoList, setTodoList] = useState([
     { id: 1, title: "Learn React" },
     { id: 2, title: "Learn GraphQL" },
@@ -21,13 +22,24 @@ const ToDoBox = () => {
     setTodoList(todoList.concat(todo));
     nextId.current++;
   };
+  const updateTodo = (todo) => {
+    todoList.map((item) => {
+      if (item.id === todo.id) {
+        item.title = todo.title;
+      }
+    });
+  };
   const deleteHandler = (id) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
   return (
     <div>
       <ToDoInput addTodoHandler={addTodo} />
-      <ToDoList todoList={todoList} deleteHandler={deleteHandler} />
+      <ToDoList
+        todoList={todoList}
+        deleteHandler={deleteHandler}
+        updateTodo={updateTodo}
+      />
     </div>
   );
 };
