@@ -1,3 +1,4 @@
+import BoardList from "./BoardList";
 import UseRefExam1 from "./compont/useRef/UseRefExam1";
 import MyInputBox from "./MyInputBox";
 // import ChildrenExam from "./compont/propsChildren/ChildrenExam";
@@ -27,7 +28,8 @@ function App() {
       */}
       {/* <MyInputBox /> */}
       {/* <TitlePriceInputBox /> */}
-      <UseRefExam1 />
+      {/* <UseRefExam1 /> */}
+      <BoardList />
     </div>
   );
 }
