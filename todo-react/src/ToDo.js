@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const ToDo = ({ todo, deleteHandler, updateTodo }) => {
   // console.log("todo");
   const [updateMode, setUpdateMode] = useState(false);
@@ -10,6 +10,13 @@ const ToDo = ({ todo, deleteHandler, updateTodo }) => {
     updateTodo({ id: todo.id, title: title });
     setUpdateMode(false);
   };
+  useEffect(() => {
+    console.log("ToDo컴포넌트 화면에 나타남!!");
+
+    return () => {
+      console.log("ToDo 컴포넌트가 화면에서 사라짐!!");
+    };
+  }, [todo]);
   if (!updateMode) {
     return (
       <>
