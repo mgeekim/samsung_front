@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors</title>
+    <style>
+      ul + p {
+        color: red;
+      }
+      .a + li {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li class="a">List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor.
+      </p>
+      <p>ul + p test</p>
+    </div>
+    <p>ul + p test222</p>
+  </body>
+</html>
