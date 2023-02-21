@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = [1, 2, 3, 4];
+      console.log(array);
+      console.log(typeof array);
+      const iarry = [1, "a", { a: 10, name: "haha" }];
+      const objects = [{ name: "aa" }, { name: "bb" }];
+      console.log(objects[0]);
+
+      objects.push({ name: "c" });
+
+      const superheroes = [
+        "아이언맨",
+        "캡틴 아메리카",
+        "토르",
+        "닥터 스트레인지",
+      ];
+      const resultSuperheroes = [];
+      for (let i = 0; i < superheroes.length; i++) {
+        console.log(superheroes[i]);
+        resultSuperheroes.push(superheroes[i] + "님");
+      }
+      function print(a) {
+        console.log(a);
+      }
+      superheroes.forEach(print);
+
+      superheroes.forEach((a) => console.log(a));
+
+      (function test() {
+        console.log("test");
+      })();
+
+      //   test;
+
+      const array3 = [1, 2, 3, 5, 4, 5, 6];
+      const squared = array3.map((n) => n * n);
+      console.log(squared);
+
+      let index = superheroes.indexOf("토르");
+      console.log(index);
+    </script>
+  </body>
+</html>

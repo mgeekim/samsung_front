@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(add(1, 2));
+
+      const add = function (a, b) {
+        return a + b;
+      };
+
+      console.log(add(1, 2));
+
+      //화살표함수
+      const add2 = (a, b) => a + b;
+
+      console.log(add2(1, 2));
+      let a = 10;
+      let b = 20;
+      console.log(a + "+" + b + "=" + add(a, b));
+      console.log(`${a} + ${b}=${add(a, b)}입니다.`);
+
+      function test() {
+        let a = 10;
+        console.log(this);
+      }
+
+      const test2 = () => {
+        console.log(this);
+      };
+
+      test();
+      test2();
+    </script>
+  </body>
+</html>
