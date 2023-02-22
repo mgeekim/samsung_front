@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <button id="helloBtn">hello</button>
+    <script>
+      /*
+         1. 이벤트 리스닝
+         source.addEventListener(eventName, eventHandler, false);
+
+        2. 이벤트 반응
+
+        */
+
+      document.addEventListener("click", changeColor, false);
+
+      function changeColor() {
+        // const color = prompt();
+        document.body.style.backgroundColor = "red";
+        console.log("document event 발생");
+      }
+
+      const btn = document.getElementsByTagName("button");
+      //   console.log(btn);
+      const btnid = document.getElementById("helloBtn");
+      //   console.log(btnid);
+      btn[0].addEventListener("click", () => {
+        document.body.style.backgroundColor = "yellow";
+        console.log("button event 발생");
+      });
+    </script>
+  </body>
+</html>

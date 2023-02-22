@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click event</title>
+  </head>
+  <body>
+    <script>
+      function makeColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        return `rgb(${r},${g},${b})`;
+      }
+
+      document.addEventListener("click", changeColor, false);
+
+      function changeColor() {
+        document.body.style.backgroundColor = makeColor();
+
+        document.removeEventListener("click", changeColor, false);
+      }
+    </script>
+  </body>
+</html>
