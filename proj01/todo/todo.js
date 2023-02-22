@@ -4,7 +4,7 @@ let basicDatas = [];
 
 function getTodos() {
   const xhr = new XMLHttpRequest();
-  xhr.open("get", "http://localhost:3030/api/todos");
+  xhr.open("get", "http://localhost:3333/api/todos");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -22,14 +22,14 @@ function getTodos() {
 
 function updateTodo(id) {
   let xhr = new XMLHttpRequest();
-  xhr.open("PATCH", "http://localhost:3030/api/todos/" + id);
+  xhr.open("PATCH", "http://localhost:3333/api/todos/" + id);
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhr.send();
 }
 
 function deleteTodo(id) {
   let xhr = new XMLHttpRequest();
-  xhr.open("DELETE", "http://localhost:3030/api/todos/" + id);
+  xhr.open("DELETE", "http://localhost:3333/api/todos/" + id);
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhr.send();
 }
@@ -37,7 +37,7 @@ function deleteTodo(id) {
 function postTodo(todo) {
   let xhr = new XMLHttpRequest();
 
-  xhr.open("post", "http://localhost:3030/api/todos", true);
+  xhr.open("post", "http://localhost:3333/api/todos", true);
   xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
   xhr.onload = function () {
     // 글쓰기를 할 경우 ajax의 결과를 json 오브젝트로 변환하여 추가한다.
