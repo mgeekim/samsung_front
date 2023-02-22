@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myform" action="04.html">
+      <label for="name">이름</label><br />
+      <input type="text" name="name" id="name" value="" /><br />
+      <label for="pass">비밀번호</label><br />
+      <input type="password" name="pass" id="pass" /><br />
+      <label for="pass-check">비밀번호 확인</label><br />
+      <input type="password" id="pass-check" /><br />
+      <input type="submit" value="제출" />
+    </form>
+    <script>
+      const checkValue = (e) => {
+        const name = document.getElementById("name");
+        const pass = document.getElementById("pass");
+        const pass2 = document.getElementById("pass-check");
+
+        alert(name.value);
+        if (name.value == "") {
+          alert("이름은 반드시 입력하세요.");
+          name.focus();
+          name.style.backgroundColor = "red";
+          e.preventDefault();
+          //   return false;
+        }
+      };
+
+      const myform = document.getElementById("myform");
+
+      //   myform.addEventListener("submit", checkValue, false);
+      myform.onsubmit = checkValue;
+    </script>
+  </body>
+</html>

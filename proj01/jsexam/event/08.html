@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>오늘의 할일</h1>
+
+    <ul id="todo-list">
+      <li>
+        <input type="checkbox" id="todo1" />
+        <label for="todo1">이벤트 버블링 공부하기</label>
+      </li>
+
+      <li>
+        <input type="checkbox" id="todo2" />
+        <label for="todo2">이벤트 캡쳐링 공부하기</label>
+      </li>
+      <li>
+        <input type="checkbox" id="todo3" />
+        <label for="todo3">소풍가기</label>
+      </li>
+      <li>
+        <input type="checkbox" id="todo4" />
+        <label for="todo4">맛있는거 먹으로 가기</label>
+      </li>
+    </ul>
+    <label for="todo">할일을 입력하세요.</label>
+    <input type="text" id="todo-value" />
+    <button id="todoBtn">할일입력</button>
+
+    <script>
+      //할일입력 버튼에 이벤트 걸기.
+      const todoBtn = document.getElementById("todoBtn");
+      todoBtn.addEventListener("click", inputTodo);
+
+      //할일 입력이벤트가 발생했을 때 처리할 함수 구현
+      function inputTodo() {
+        //할일이 하나 등록된다는 것은 아래 요소들이 추가되는 것을 의미
+        //     <li>
+        // <input type="checkbox" id="todo4" />
+        // <label for="todo4">맛있는거 먹으로 가기</label>
+        // </li>
+
+        const li = document.createElement("li");
+        const input = document.createElement("input");
+        const label = document.createElement("label");
+
+        const todoValue = document.getElementById("todo-value").value;
+        const labelText = document.createTextNode(todoValue);
+
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("id", "todo5");
+        label.setAttribute("for", "todo5");
+
+        label.appendChild(labelText);
+        li.appendChild(input);
+        li.appendChild(label);
+
+        //새로 만들어진 li 를 ul에 붙혀준다.
+
+        const todoList = document.getElementById("todo-list");
+        todoList.appendChild(li);
+      }
+      //할일 목록에 이벤트 등록
+      const todoList = document.getElementById("todo-list");
+      todoList.addEventListener("click", (e) => {
+        //여기저기 클릭될때 모두 실행되는데 input 요소가 클릭될때만
+        // 실행되게 하려면?
+        e.stopPropagation();
+
+        if (e.target.tagName == "INPUT") {
+          alert("click!!!");
+        }
+      });
+    </script>
+  </body>
+</html>
