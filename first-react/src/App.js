@@ -1,11 +1,14 @@
-import ChildrenExam from "./compont/propsChildren/ChildrenExam";
-import UseStateExam1 from "./compont/useState/UseStateExam1";
-import UseStateExam3 from "./compont/useState/UseStateExam3";
-import Counter from "./Counter";
-import Hello from "./Hello";
+// import ChildrenExam from "./compont/propsChildren/ChildrenExam";
+// import UseRefExam from "./compont/useRef/UseRefExam";
+// import UseStateExam1 from "./compont/useState/UseStateExam1";
+// import UseStateExam3 from "./compont/useState/UseStateExam3";
+// import Counter from "./Counter";
+// import Hello from "./Hello";
 import MyInputBox from "./MyInputBox";
-import TitlePriceInputBox from "./TitlePriceInputBox";
-import Welcome from "./Welcome";
+// import TitlePriceInputBox from "./TitlePriceInputBox";
+// import Welcome from "./Welcome";
+
+import UseRefExam from "./compont/useRef/UseRefExam";
 
 function App() {
   const name = "kang";
@@ -20,8 +23,9 @@ function App() {
       {/* <Welcome flag={false} />
       <Hello isSpecial={false} name="kang" color="green"></Hello> */}
 
-      {/* <MyInputBox /> */}
-      <TitlePriceInputBox />
+      <MyInputBox />
+      {/* <TitlePriceInputBox /> */}
+      <UseRefExam />
     </>
   );
 }

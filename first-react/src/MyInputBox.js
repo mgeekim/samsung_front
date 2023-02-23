@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function MyInputBox() {
   const [text, setText] = useState("기본값");
 
+  const textinput = useRef();
+
   function resetHandler(e) {
     setText("");
+    textinput.current.focus();
   }
 
   function chageHandler(e) {
@@ -15,7 +18,7 @@ function MyInputBox() {
     <div>
       <label>{text}</label>
       <br />
-      <input type="text" value={text} onChange={chageHandler} />
+      <input type="text" value={text} onChange={chageHandler} ref={textinput} />
       <button onClick={resetHandler}>RESET</button>
     </div>
   );
