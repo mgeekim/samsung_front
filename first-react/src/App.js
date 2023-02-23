@@ -4,6 +4,7 @@ import UseStateExam3 from "./compont/useState/UseStateExam3";
 import Counter from "./Counter";
 import Hello from "./Hello";
 import MyInputBox from "./MyInputBox";
+import TitlePriceInputBox from "./TitlePriceInputBox";
 import Welcome from "./Welcome";
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       {/* <Welcome flag={false} />
       <Hello isSpecial={false} name="kang" color="green"></Hello> */}
 
-      <MyInputBox />
+      {/* <MyInputBox /> */}
+      <TitlePriceInputBox />
     </>
   );
 }
