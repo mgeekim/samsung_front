@@ -10,7 +10,6 @@ function getTodos() {
       if (xhr.status === 200) {
         // json 문자열을 json 객체로 변환시킨다.
         var todos = JSON.parse(this.responseText);
-        console.log(todos);
         for (let i = 0; i < todos.length; i++) {
           todoItemAdd(todos[i]);
         }
@@ -43,7 +42,7 @@ function postTodo(todo) {
     // 글쓰기를 할 경우 ajax의 결과를 json 오브젝트로 변환하여 추가한다.
     todoItemAdd(JSON.parse(xhr.responseText));
   };
-  console.log("postTodo!!!");
+  // console.log("postTodo!!!" + todo);
   xhr.send(JSON.stringify({ title: todo }));
 }
 
@@ -79,7 +78,7 @@ inputbtn.addEventListener("click", function () {
 });
 
 function todoItemAdd(todoObj) {
-  console.log(todoObj);
+  // console.log(todoObj);
   const li = document.createElement("li");
   li.className = "todo-item";
   const textSpan = document.createElement("SPAN");

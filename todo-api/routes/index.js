@@ -20,6 +20,8 @@ let todos = [
 ];
 
 router.get("/api/todos", function (req, res) {
+  //DB에서 꺼내던지...  비지니스로직을 통해 얻어올...
+
   res.status(200).json(todos);
 });
 
@@ -34,7 +36,7 @@ router.post("/api/todos", function (req, res) {
   const newTodo = { id: ++idGen, title: title, done: false };
   todos.unshift(newTodo);
 
-  res.status(200).json(todos);
+  res.status(200).json(newTodo);
 });
 
 router.patch("/api/todos/:id", function (req, res) {
