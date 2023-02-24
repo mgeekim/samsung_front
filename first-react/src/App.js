@@ -10,6 +10,7 @@ import MyInputBox from "./MyInputBox";
 
 import UseRefExam from "./compont/useRef/UseRefExam";
 import BoardList from "./BoardList";
+import UseEffectExam from "./compont/useEffect/UseEffectExam";
 
 function App() {
   const name = "kang";
@@ -24,10 +25,11 @@ function App() {
       {/* <Welcome flag={false} />
       <Hello isSpecial={false} name="kang" color="green"></Hello> */}
 
-      <MyInputBox />
+      {/* <MyInputBox /> */}
       {/* <TitlePriceInputBox /> */}
       {/* <UseRefExam /> */}
-      <BoardList />
+      {/* <BoardList /> */}
+      <UseEffectExam />
     </>
   );
 }
