@@ -9,6 +9,7 @@ import MyInputBox from "./MyInputBox";
 // import Welcome from "./Welcome";
 
 import UseRefExam from "./compont/useRef/UseRefExam";
+import BoardList from "./BoardList";
 
 function App() {
   const name = "kang";
@@ -25,7 +26,8 @@ function App() {
 
       <MyInputBox />
       {/* <TitlePriceInputBox /> */}
-      <UseRefExam />
+      {/* <UseRefExam /> */}
+      <BoardList />
     </>
   );
 }
